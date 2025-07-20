@@ -19,9 +19,6 @@ cd RAG
 3. Install required Pakages
 ```
 pip install -r requirements.txt
-OR
-conda env create -f environment.yml
-conda activate cbot
 ```
 
 ### Inference
