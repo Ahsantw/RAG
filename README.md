@@ -41,6 +41,18 @@ Question ('exit'): whats procyon
  - Page 13, File: data/procyon_guide.pdf
 Answer:  UL Procyon is a suite of benchmark tests for professional users in various industries, designed to measure the performance of computers and devices.
 ```
+```
+Question ('exit'): tell me what the context says about Benchmarks at the enterprise IT level
+ - Page 0, File: data/procyon_guide.pdf
+ - Page 0, File: data/procyon_guide.pdf
+ - Page 41, File: data/procyon_guide.pdf
+Answer:  Benchmarks at the enterprise IT level support every stage in the life cycle of PC assets, easing PC lifecycle management for IT teams. They provide support for:
+
+• Planning and procurement: Simplify PC performance comparison and cost justification
+• Validation and standardization: Test and compare the performance of new PCs against user-defined baselines
+• Operations and management: Efficiently automate remote performance testing to provide reliable insights and reporting
+• Optimization or replacement: Make informed PC life-cycle decisions based on benchmark results stored in your central database
+```
 
 ### Hardware Specs.
 
