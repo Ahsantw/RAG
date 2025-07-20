@@ -12,8 +12,8 @@ This project demonstrates an end-to-end Retrieval-Augmented Generation (RAG) pip
 
 1. Clone the Repository
 ```
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Ahsantw/RAG
+cd RAG
 ```
 2. Create and Activate Conda Environment
 ```
@@ -24,7 +24,7 @@ conda activate cbot
 ### Inference
 All steps are done with one command. At the end when all steps are done, you can easly type questions.
 ```
-python rag_loop.py
+python rag_cli.py
 ```
 
 ### Sample Output
