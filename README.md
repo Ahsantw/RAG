@@ -10,3 +10,13 @@ This project demonstrates an end-to-end Retrieval-Augmented Generation (RAG) pip
 
 ### Installation
 
+1. Clone the Repository
+```
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+2. Create and Activate Conda Environment
+```
+conda env create -f environment.yaml
+conda activate cbot
+```
