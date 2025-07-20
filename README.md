@@ -7,7 +7,7 @@ This project demonstrates an end-to-end Retrieval-Augmented Generation (RAG) pip
 3. If the model has already been converted, load the existing INT4 version directly from folder.
 4. Use a Sentence-Transformers embedding model to generate embeddings and store them using FAISS.
 5. Build a question-answering (QA) system using LangChain to complete the RAG pipeline.
-6. Logs for all the steps are documented in all_logs folder.
+6. Logs for all the steps are documented in all_logs folder. So very easy to debug any issues.
 ### Installation
 
 1. Clone the Repository
