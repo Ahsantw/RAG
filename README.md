@@ -30,7 +30,10 @@ python rag_loop.py
 ### Sample Output
 
 ```
-Question ('exit'): whats procyon?
+Question ('exit'): whats procyon
+ - Page 1, File: data/procyon_guide.pdf
+ - Page 39, File: data/procyon_guide.pdf
+ - Page 13, File: data/procyon_guide.pdf
 Answer:  UL Procyon is a suite of benchmark tests for professional users in various industries, designed to measure the performance of computers and devices.
 ```
 
