@@ -15,8 +15,11 @@ This project demonstrates an end-to-end Retrieval-Augmented Generation (RAG) pip
 git clone https://github.com/Ahsantw/RAG
 cd RAG
 ```
-2. Create and Activate Conda Environment
+2. Install Python 3.10
+3. Install required Pakages
 ```
+pip install -r requirements.txt
+OR
 conda env create -f environment.yml
 conda activate cbot
 ```
