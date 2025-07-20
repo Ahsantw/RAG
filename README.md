@@ -27,6 +27,13 @@ All steps are done with one command.
 python rag_loop.py
 ```
 
+### Sample Output
+
+```
+Question ('exit'): whats procyon?
+Answer:  UL Procyon is a suite of benchmark tests for professional users in various industries, designed to measure the performance of computers and devices.
+```
+
 ### Tested Environment
 
 This RAG pipeline was tested successfully on the following system:
