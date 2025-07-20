@@ -6,6 +6,17 @@ from optimum.intel.openvino import OVModelForCausalLM
 import yaml
 class OpenVINOLLMLoader:
     def __init__(self,logger):
+        """
+        Initialize the LLM loader using config.yaml.
+        
+        - logger: Python logging.Logger object for tracking and debugging.
+        - export_path: Path of directory where openvino model will be exported to or loaded from.
+        - hugging_face_model_name: Hugging Face model name or path
+        - max_new_tokens: Max number of tokens to generate in a response
+        - do_sample: Whether to use sampling during generation.
+        - temperature: Controls randomness of model's output
+        - top_p: Top-p nucleus sampling threshold
+        """
         with open("config/config.yaml", "r") as f:
             config = yaml.safe_load(f)["llm"]
 
@@ -19,6 +30,9 @@ class OpenVINOLLMLoader:
         self.logger = logger
 
     def load_openvino_llm(self):
+        """
+        Load the quantized OpenVINO model and create a LangChain-compatible pipeline.
+        """
         tokenizer = AutoTokenizer.from_pretrained(self.export_path)
         model = OVModelForCausalLM.from_pretrained(self.export_path)
 
@@ -41,7 +55,11 @@ class OpenVINOLLMLoader:
         return llm_model
 
 
-    def get_llm_model(self):       
+    def get_llm_model(self):
+        """
+        Get the LLM model ready for inference. 
+        If loading fails, it will download and quantize the model to INT4 using OpenVINO.
+        """
 
         try:
             llm = self.load_openvino_llm()

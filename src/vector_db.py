@@ -6,6 +6,15 @@ import os
 import yaml
 class PDFVectorStore:
     def __init__(self,logger):
+        """
+        Initialize the pdf vector store using config.yaml.
+
+        - data_folder: Path to the folder containing PDF files.
+        - save_path: Directory where the FAISS vector database will be saved.
+        - chunk_size: Size of each document chunk in characters.
+        - chunk_overlap: Number of overlapping characters between chunks.
+        - model_name: HuggingFace model name used for generating embeddings.
+        """
         with open("config/config.yaml", "r") as f:
             config = yaml.safe_load(f)["vector_db"]
         
@@ -21,6 +30,15 @@ class PDFVectorStore:
         self.embedding_model = HuggingFaceEmbeddings(model_name=self.model_name)
     
     def create_db(self):
+        """
+        Create a FAISS vector database from all PDF files in the data folder.
+
+        Actions:
+            - Reads and loads text content from all PDFs.
+            - Splits the content into chunks using specified chunk size and overlap.
+            - Converts the chunks into embeddings using the embedding model.
+            - Saves the resulting FAISS vector store to disk at the configured save path.
+        """
         documents = []
         self.logger.info(f"Reading all the pdfs from {self.data_folder}")
         for filename in os.listdir(self.data_folder):
@@ -40,6 +58,9 @@ class PDFVectorStore:
         vectorstore.save_local(self.save_path)
     
     def read_db(self):
+        """
+        Load an existing FAISS vector database from disk.
+        """
         vectorstore = FAISS.load_local(
         self.save_path,
         self.embedding_model,
