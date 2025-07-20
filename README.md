@@ -31,7 +31,7 @@ All steps are done with one command. At the end when all steps are done, you can
 ```
 python rag_cli.py
 ```
-
+Different parameters/variable can easily be change from [config](https://github.com/Ahsantw/RAG/blob/main/config/config.yaml) file.
 ### Sample Output
 
 ```
