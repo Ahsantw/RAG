@@ -1,0 +1,15 @@
+vector_db:
+  data_folder: "data/"
+  save_path: "db/faiss_index"
+  chunk_size: 1000
+  chunk_overlap: 200
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  k: 3
+
+llm:
+  export_path: "models/llama-3.1-instruct-8b-ovir-int4"
+  hugging_face_model_name: "meta-llama/Llama-3.1-8B-Instruct"
+  max_new_tokens: 512
+  do_sample: false
+  temperature: 0.2
+  top_p: 0.95
