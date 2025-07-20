@@ -20,6 +20,11 @@ cd RAG
 ```
 pip install -r requirements.txt
 ```
+4. Log into to hugginface accout (optional if you do not have HF model). You will be asked to paste [HF token](https://huggingface.co/docs/hub/en/security-tokens).
+```
+huggingface-cli login
+```
+
 
 ### Inference
 All steps are done with one command. At the end when all steps are done, you can easly type questions.
