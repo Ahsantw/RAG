@@ -17,7 +17,7 @@ cd RAG
 ```
 2. Create and Activate Conda Environment
 ```
-conda env create -f environment.yaml
+conda env create -f environment.yml
 conda activate cbot
 ```
 
