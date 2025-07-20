@@ -20,3 +20,18 @@ cd your-repo-name
 conda env create -f environment.yaml
 conda activate cbot
 ```
+
+### Inference
+All steps are done with one command.
+```
+python rag_loop.py
+```
+
+### Tested Environment
+
+This RAG pipeline was tested successfully on the following system:
+
+- **OS**: Windows 10
+- **Processor**: Intel Core i7 10th Gen
+- **RAM**: 32 GB
+- **GPU**: NVIDIA RTX 3090
