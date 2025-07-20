@@ -22,7 +22,7 @@ conda activate cbot
 ```
 
 ### Inference
-All steps are done with one command.
+All steps are done with one command. At the end when all steps are done, you can easly type questions.
 ```
 python rag_loop.py
 ```
