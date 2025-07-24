@@ -36,8 +36,18 @@ bash run_demo.sh
 Different parameters/variable can easily be change from [config](https://github.com/Ahsantw/RAG/blob/main/config/config.yaml) file.
 
 ### Step by Step Inference
-1. Download and Convert llama Model
-To download model and convert it to openvino ir int4 format. 
+1. Download and Convert llama Model.
+```
+python src/convert_llama_to_open.py
+```
+2. Store pdf's embeding using Faiss.
+```
+python src/vector_db.py
+```
+3. Answer with reference for queries.
+```
+python rag_cli.py
+```
 
 ### Sample Output
 The output includes a reference from the PDF, followed by the actual answer.
