@@ -66,4 +66,11 @@ class PDFVectorStore:
         self.embedding_model,
         allow_dangerous_deserialization=True)
         return vectorstore
+
+if __name__ == "__main__":
+    from log_setup import setup_logger
+    logger = setup_logger(__name__, '')
+    logger.info(f"-----------------------STARTED LOGGING---------------------------")
+    db_class = PDFVectorStore(logger)
+    db_class.create_db()
     

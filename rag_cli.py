@@ -6,7 +6,7 @@ from langchain.prompts import PromptTemplate
 from langchain.globals import set_verbose
 import yaml
 import re
-
+import time
 set_verbose(False)
 # Configure logging
 logger = setup_logger(__name__, '')
@@ -26,13 +26,12 @@ def main(logger):
     """
     with open("config/config.yaml", "r") as f:
         config = yaml.safe_load(f)["vector_db"]
+
     loader = OpenVINOLLMLoader(logger)
-    llm_model = loader.get_llm_model()
+    llm_model = loader.load_openvino_llm()
 
 
     db_class = PDFVectorStore(logger)
-    db_class.create_db()
-
     db = db_class.read_db()
 
 
@@ -55,7 +54,7 @@ def main(logger):
         logger.info(f'Question {question}')
         if question.strip().lower() == "exit":
             break
-
+        st = time.time()
         qa_chain = RetrievalQA.from_chain_type(
             llm=llm_model,
             chain_type="stuff",
@@ -76,6 +75,8 @@ def main(logger):
 
         logger.info(f"Answer {answer}")
         print(f"Answer: {answer}")
+        et = time.time()
+        print('Response Time:',(et-st))
 
 
 if __name__ == "__main__":

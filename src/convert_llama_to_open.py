@@ -5,6 +5,7 @@ from transformers import AutoTokenizer, pipeline
 from optimum.intel.openvino import OVModelForCausalLM
 import yaml
 class OpenVINOLLMLoader:
+    
     def __init__(self,logger):
         """
         Initialize the LLM loader using config.yaml.
@@ -26,7 +27,6 @@ class OpenVINOLLMLoader:
         self.do_sample = config["do_sample"]
         self.temperature = config["temperature"]
         self.top_p = config["top_p"]
-        
         self.logger = logger
 
     def load_openvino_llm(self):
@@ -63,6 +63,7 @@ class OpenVINOLLMLoader:
 
         try:
             llm = self.load_openvino_llm()
+            print(f"MODEL: Using already converted model at {self.export_path}")
             self.logger.info(f"Successfully loaded model from {self.export_path}")
         except Exception as e:
             self.logger.error(f"Failed to load model from {self.export_path}: {e}")
@@ -79,7 +80,7 @@ class OpenVINOLLMLoader:
         return llm
 
 if __name__ == "__main__":
-
+    from log_setup import setup_logger
     logger = setup_logger(__name__, '')
     logger.info(f"-----------------------STARTED LOGGING---------------------------")
     loader = OpenVINOLLMLoader(logger)
