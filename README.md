@@ -20,7 +20,7 @@ cd RAG
 ```
 pip install -r requirements.txt
 ```
-4. Log into to hugginface accout (optional if you do not have HF model). You will be asked to paste [HF token](https://huggingface.co/docs/hub/en/security-tokens).
+4. Log into to hugginface accout (optional if you do not have HF model i.e. meta-llama/Llama-3.1-8B-Instruct). You will be asked to paste [HF token](https://huggingface.co/docs/hub/en/security-tokens).
 ```
 huggingface-cli login
 ```
