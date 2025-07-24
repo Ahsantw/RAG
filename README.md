@@ -48,6 +48,7 @@ python src/vector_db.py
 ```
 python rag_cli.py
 ```
+Different parameters/variable can easily be change from [config](https://github.com/Ahsantw/RAG/blob/main/config/config.yaml) file.
 
 ### Sample Output
 The output includes a reference from the PDF, followed by the actual answer.
@@ -79,3 +80,19 @@ This RAG pipeline was tested successfully on the following system:
 - **Processor**: Intel Core i7 10th Gen
 - **RAM**: 32 GB
 - **GPU**: NVIDIA RTX 3090
+- **HardDrive**: 2TB
+
+### Latency
+- **Average response time:** 20 seconds
+
+### Common Issues
+1. HugginFace login issue.
+```
+Failed to Run the pipeline : You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct
+```
+Solution: Go to huggingface [page](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and request model's access by completing and submitting the form. It takes few minutes and they grant you access.
+Then login to your hugginface accout from terminal using following command and then paste [HF token](https://huggingface.co/docs/hub/en/security-tokens).
+```
+huggingface-cli login
+```
