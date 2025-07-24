@@ -24,16 +24,23 @@ pip install -r requirements.txt
 ```
 huggingface-cli login
 ```
+### Model
 
+This repository uses OpenVINO INT4 version of Llama-3.1-8B-Instruct model during inference.
 
-### Inference
+### Full Pipeline Inference
 All steps are done with one command. At the end when all steps are done, you can easly type questions.
 ```
-python rag_cli.py
+bash run_demo.sh
 ```
 Different parameters/variable can easily be change from [config](https://github.com/Ahsantw/RAG/blob/main/config/config.yaml) file.
-### Sample Output
 
+### Step by Step Inference
+1. Download and Convert llama Model
+To download model and convert it to openvino ir int4 format. 
+
+### Sample Output
+The output includes a reference from the PDF, followed by the actual answer.
 ```
 Question ('exit'): whats procyon
  - Page 1, File: data/procyon_guide.pdf
@@ -58,7 +65,7 @@ Answer:  Benchmarks at the enterprise IT level support every stage in the life c
 
 This RAG pipeline was tested successfully on the following system:
 
-- **OS**: Windows 10
+- **OS**: Windows 10/ Ubuntu 22.04 (Tested on Both)
 - **Processor**: Intel Core i7 10th Gen
 - **RAM**: 32 GB
 - **GPU**: NVIDIA RTX 3090
