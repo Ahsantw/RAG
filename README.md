@@ -83,7 +83,7 @@ This RAG pipeline was tested successfully on the following system:
 - **HardDrive**: 2TB
 
 ### Latency
-- **Average response time:** 20 seconds
+- **Average response time:** 15-20 seconds
 
 ### Common Issues
 1. HugginFace login issue.
